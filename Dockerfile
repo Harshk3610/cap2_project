@@ -1,17 +1,11 @@
-# Use the official Python image
-FROM python:3.9-slim
+# Use an official Python runtime as a parent image
+FROM python:3.8-slim
 
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy the current directory contents into the container
+# Copy the current directory contents into the container at /app
 COPY . /app
 
-# Install any dependencies (if any)
-RUN pip install --no-cache-dir flask
-
-# Expose the port (optional, based on your application)
-EXPOSE 5000
-
-# Command to run your application (modify as necessary)
-CMD ["python", "app.py"]
+# Run a simple command
+CMD ["echo", "Hello, World!"]
